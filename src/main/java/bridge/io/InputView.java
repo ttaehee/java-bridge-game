@@ -5,6 +5,8 @@ import static bridge.exception.ExceptionMessage.BRIDGE_SIZE_RANGE_OVER_EXCEPTION
 
 import java.util.Scanner;
 
+import bridge.model.BridgeMoveType;
+
 /**
  * 사용자로부터 입력을 받는 역할을 한다
  */
@@ -21,6 +23,14 @@ public class InputView {
 		int bridgeSize = Integer.parseInt(input);
 		checkSizeRange(bridgeSize);
 		return scanner.nextInt();
+	}
+
+	/**
+	 * 사용자가 이동할 칸을 입력받는다.
+	 */
+	public BridgeMoveType readMoving() {
+		String direction = scanner.nextLine();
+		return BridgeMoveType.of(direction);
 	}
 
 	private void validateDigit(String input) {
