@@ -26,7 +26,7 @@ public enum BridgeMoveType {
 
 	public static String of(int bridgeCode) {
 		return Arrays.stream(BridgeMoveType.values())
-				.filter(bridge -> bridge.code == bridgeCode)
+				.filter(moveType -> moveType.code == bridgeCode)
 				.findFirst()
 				.orElseThrow(()-> new IllegalArgumentException(WRONG_BRIDGE_TYPE_EXCEPTION.getMessage()))
 				.direction;
@@ -34,7 +34,7 @@ public enum BridgeMoveType {
 
 	public static BridgeMoveType of(String bridgeDirection) {
 		return Arrays.stream(BridgeMoveType.values())
-				.filter(bridge -> bridge.direction.equals(bridgeDirection))
+				.filter(moveType -> moveType.direction.equals(bridgeDirection))
 				.findFirst()
 				.orElseThrow(()-> new IllegalArgumentException(WRONG_BRIDGE_TYPE_EXCEPTION.getMessage()));
 	}
