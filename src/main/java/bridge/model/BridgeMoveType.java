@@ -24,11 +24,12 @@ public enum BridgeMoveType {
 		return direction;
 	}
 
-	public static BridgeMoveType of(int bridgeCode) {
+	public static String of(int bridgeCode) {
 		return Arrays.stream(BridgeMoveType.values())
 				.filter(bridge -> bridge.code == bridgeCode)
 				.findFirst()
-				.orElseThrow(()-> new IllegalArgumentException(WRONG_BRIDGE_TYPE_EXCEPTION.getMessage()));
+				.orElseThrow(()-> new IllegalArgumentException(WRONG_BRIDGE_TYPE_EXCEPTION.getMessage()))
+				.direction;
 	}
 
 	public static BridgeMoveType of(String bridgeDirection) {
