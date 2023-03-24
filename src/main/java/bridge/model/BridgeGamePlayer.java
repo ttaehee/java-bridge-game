@@ -2,11 +2,11 @@ package bridge.model;
 
 import java.util.List;
 
-public class BridgePlayer {
+public class BridgeGamePlayer {
 
 	private final List<BridgeMoveType> playerRoute;
 
-	public BridgePlayer(List<BridgeMoveType> playerRoute) {
+	public BridgeGamePlayer(List<BridgeMoveType> playerRoute) {
 		this.playerRoute = playerRoute;
 	}
 
