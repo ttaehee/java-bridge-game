@@ -5,6 +5,7 @@ import bridge.model.BridgeGameHistory;
 import bridge.model.BridgeGameRound;
 import bridge.model.BridgeGamePlayer;
 import bridge.model.BridgeGameStatus;
+import bridge.model.BridgeMoveType;
 
 /**
  * 다리 건너기 게임을 관리하는 클래스
@@ -25,7 +26,8 @@ public class BridgeGame {
 		bridgeGameAnswer.setUpAnswer(bridgeSize);
 	}
 
-	public BridgeGameStatus checkAnswer() {
+	public BridgeGameStatus moveAndCheckAnswer(BridgeMoveType bridgeMoveType) {
+		bridgeGamePlayer.move(bridgeMoveType);
 		return bridgeGameAnswer.compareWith(bridgeGamePlayer);
 	}
 
