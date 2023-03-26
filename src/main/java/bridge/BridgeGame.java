@@ -34,4 +34,9 @@ public class BridgeGame {
 	public BridgeGameHistory getHistory() {
 		return new BridgeGameHistory(bridgeGamePlayer, bridgeGameAnswer, bridgeRound);
 	}
+
+	public void retry() {
+		bridgeRound.plusRound();
+		bridgeGamePlayer.resetMoveHistory();
+	}
 }
