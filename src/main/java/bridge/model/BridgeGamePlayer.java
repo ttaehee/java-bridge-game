@@ -25,4 +25,11 @@ public class BridgeGamePlayer {
 		int currentLocation = playerRoute.size() - 1;
 		return playerRoute.get(currentLocation) != bridgeGameAnswer.get(currentLocation);
 	}
+
+	/**
+	 * 플레이어가 다리를 끝까지 건넜는지 여부를 반환하는 메서드
+	 */
+	public boolean isReached(List<BridgeMoveType> bridgeGameAnswer) {
+		return playerRoute.size() == bridgeGameAnswer.size();
+	}
 }
