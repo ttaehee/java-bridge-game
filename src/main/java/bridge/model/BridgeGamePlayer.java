@@ -32,4 +32,11 @@ public class BridgeGamePlayer {
 	public boolean isReached(List<BridgeMoveType> bridgeGameAnswer) {
 		return playerRoute.size() == bridgeGameAnswer.size();
 	}
+
+	/**
+	 * 플레이어의 현재 이동 기록을 조회하는 메서드
+	 */
+	public List<BridgeMoveType> getMoveHistory() {
+		return new ArrayList<>(playerRoute);
+	}
 }
