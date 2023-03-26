@@ -1,5 +1,6 @@
 package bridge.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import bridge.BridgeMaker;
@@ -9,8 +10,8 @@ public class BridgeGameAnswer {
 
 	private final List<BridgeMoveType> bridgeAnswer;
 
-	public BridgeGameAnswer(List<BridgeMoveType> bridgeAnswer) {
-		this.bridgeAnswer = bridgeAnswer;
+	public BridgeGameAnswer() {
+		this.bridgeAnswer = new ArrayList<>();
 	}
 
 	public void setUpAnswer(int bridgeSize) {

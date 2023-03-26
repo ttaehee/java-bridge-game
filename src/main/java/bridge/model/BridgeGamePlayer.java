@@ -1,13 +1,14 @@
 package bridge.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BridgeGamePlayer {
 
 	private final List<BridgeMoveType> playerRoute;
 
-	public BridgeGamePlayer(List<BridgeMoveType> playerRoute) {
-		this.playerRoute = playerRoute;
+	public BridgeGamePlayer() {
+		this.playerRoute = new ArrayList<>();
 	}
 
 	/**
