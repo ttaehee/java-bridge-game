@@ -39,4 +39,11 @@ public class BridgeGamePlayer {
 	public List<BridgeMoveType> getMoveHistory() {
 		return new ArrayList<>(playerRoute);
 	}
+
+	/**
+	 * 플레이어의 현재 이동 기록을 리셋하는 메서드
+	 */
+	public void resetMoveHistory() {
+		playerRoute.clear();
+	}
 }
