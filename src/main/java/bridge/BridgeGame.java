@@ -1,6 +1,7 @@
 package bridge;
 
 import bridge.model.BridgeGameAnswer;
+import bridge.model.BridgeGameHistory;
 import bridge.model.BridgeGameRound;
 import bridge.model.BridgeGamePlayer;
 import bridge.model.BridgeGameStatus;
@@ -26,5 +27,9 @@ public class BridgeGame {
 
 	public BridgeGameStatus checkAnswer() {
 		return bridgeGameAnswer.compareWith(bridgeGamePlayer);
+	}
+
+	public BridgeGameHistory getHistory() {
+		return new BridgeGameHistory(bridgeGamePlayer, bridgeGameAnswer, bridgeRound);
 	}
 }

@@ -12,10 +12,10 @@ import bridge.BridgeNumberGenerator;
 
 public class BridgeGameAnswer {
 
-	private final List<BridgeMoveType> bridgeAnswer;
+	private final List<BridgeMoveType> bridgeGameAnswer;
 
 	public BridgeGameAnswer() {
-		this.bridgeAnswer = new ArrayList<>();
+		this.bridgeGameAnswer = new ArrayList<>();
 	}
 
 	public void setUpAnswer(int bridgeSize) {
@@ -23,16 +23,20 @@ public class BridgeGameAnswer {
 				.makeBridge(bridgeSize)
 				.stream()
 				.map(BridgeMoveType::of)
-				.forEach(bridgeAnswer::add);
+				.forEach(bridgeGameAnswer::add);
 	}
 
 	public BridgeGameStatus compareWith(BridgeGamePlayer bridgeGamePlayer) {
-		if (bridgeGamePlayer.compareMoveType(bridgeAnswer)) {
+		if (bridgeGamePlayer.compareMoveType(bridgeGameAnswer)) {
 			return FAIL;
 		}
-		if (bridgeGamePlayer.isReached(bridgeAnswer)) {
+		if (bridgeGamePlayer.isReached(bridgeGameAnswer)) {
 			return SUCCESS;
 		}
 		return CONTINUE;
+	}
+
+	public List<BridgeMoveType> getBridgeGameAnswer() {
+		return new ArrayList<>(bridgeGameAnswer);
 	}
 }
