@@ -3,19 +3,19 @@ package bridge.model;
 public enum BridgeGameStatus {
 	START,
 	CONTINUE,
-	WIN,
-	LOSE;
+	SUCCESS,
+	FAIL;
 
 	public boolean isContinue() {
 		return this == CONTINUE;
 	}
 
 	public boolean isWin() {
-		return this == WIN;
+		return this == SUCCESS;
 	}
 
 	public boolean isLose() {
-		return this == LOSE;
+		return this == FAIL;
 	}
 
 	public boolean isGaming() {
@@ -23,6 +23,6 @@ public enum BridgeGameStatus {
 	}
 
 	public boolean isEnd() {
-		return this == WIN || this == LOSE;
+		return this == SUCCESS || this == FAIL;
 	}
 }
