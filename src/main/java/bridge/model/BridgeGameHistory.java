@@ -4,21 +4,25 @@ import java.util.List;
 
 public class BridgeGameHistory {
 
-	private final BridgeGamePlayer playerBridgeHistory;
+	private final BridgeGamePlayer bridgeGamePlayer;
 	private final BridgeGameAnswer bridgeGameAnswer;
 	private final BridgeGameRound bridgeGameRound;
 
-	public BridgeGameHistory(BridgeGamePlayer playerBridgeHistory, BridgeGameAnswer bridgeGameAnswer, BridgeGameRound bridgeGameRound) {
-		this.playerBridgeHistory = playerBridgeHistory;
+	public BridgeGameHistory(BridgeGamePlayer bridgeGamePlayer, BridgeGameAnswer bridgeGameAnswer, BridgeGameRound bridgeGameRound) {
+		this.bridgeGamePlayer = bridgeGamePlayer;
 		this.bridgeGameAnswer = bridgeGameAnswer;
 		this.bridgeGameRound = bridgeGameRound;
 	}
 
 	public List<BridgeMoveType> getPlayerRoute() {
-		return playerBridgeHistory.getMoveHistory();
+		return bridgeGamePlayer.getMoveHistory();
 	}
 
-	public List<BridgeMoveType> getBridgeGameAnswer() {
+	public List<BridgeMoveType> getGameAnswer() {
 		return bridgeGameAnswer.getBridgeGameAnswer();
+	}
+
+	public BridgeGameStatus getGameResult() {
+		return bridgeGameAnswer.compareWith(bridgeGamePlayer);
 	}
 }
