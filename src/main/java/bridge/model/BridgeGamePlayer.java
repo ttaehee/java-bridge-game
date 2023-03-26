@@ -17,4 +17,12 @@ public class BridgeGamePlayer {
 	public void move(BridgeMoveType bridgeMoveType) {
 		playerRoute.add(bridgeMoveType);
 	}
+
+	/**
+	 * 플레이어의 입력값과 실제 다리의 값을 비교하는 메서드
+	 */
+	public boolean compareMoveType(List<BridgeMoveType> bridgeGameAnswer) {
+		int currentLocation = playerRoute.size() - 1;
+		return playerRoute.get(currentLocation) != bridgeGameAnswer.get(currentLocation);
+	}
 }
