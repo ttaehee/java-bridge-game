@@ -59,6 +59,10 @@ public class OutputView {
 		System.out.print(MessageFormat.format(TOTAL_ROUND.getMessage(), bridgeGameHistory.getGameRound()));
 	}
 
+	public void printException(String message) {
+		System.out.println(message);
+	}
+
 	private String createHistory(
 			List<BridgeMoveType> playerMoveHistory, List<BridgeMoveType> bridgeAnswerHistory, BridgeMoveType bridgeMoveType) {
 
