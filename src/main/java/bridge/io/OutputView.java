@@ -7,9 +7,8 @@ public class OutputView {
 
 	/**
 	 * 게임 진행과 관련된 메시지를 출력한다
-	 * @param message 출력할 메시지
 	 */
-	public void printMessage(Message message) {
-		System.out.println(message);
+	public void printMessage(GameMessage gameMessage) {
+		System.out.println(gameMessage);
 	}
 }

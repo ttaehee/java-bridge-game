@@ -10,11 +10,11 @@ public enum BridgeGameStatus {
 		return this == CONTINUE;
 	}
 
-	public boolean isWin() {
+	public boolean isSuccess() {
 		return this == SUCCESS;
 	}
 
-	public boolean isLose() {
+	public boolean isFail() {
 		return this == FAIL;
 	}
 
