@@ -12,12 +12,11 @@ import bridge.model.BridgeMoveType;
  */
 public class BridgeGame {
 
-	private final BridgeGameRound bridgeRound;
+	private final BridgeGameRound bridgeRound = new BridgeGameRound();
 	private final BridgeGamePlayer bridgeGamePlayer;
 	private final BridgeGameAnswer bridgeGameAnswer;
 
-	public BridgeGame(BridgeGameRound bridgeGameRound, BridgeGamePlayer bridgeGamePlayer, BridgeGameAnswer bridgeGameAnswer) {
-		this.bridgeRound = bridgeGameRound;
+	public BridgeGame(BridgeGamePlayer bridgeGamePlayer, BridgeGameAnswer bridgeGameAnswer) {
 		this.bridgeGamePlayer = bridgeGamePlayer;
 		this.bridgeGameAnswer = bridgeGameAnswer;
 	}
