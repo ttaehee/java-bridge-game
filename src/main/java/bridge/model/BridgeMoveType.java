@@ -38,4 +38,8 @@ public enum BridgeMoveType {
 				.findFirst()
 				.orElseThrow(()-> new IllegalArgumentException(WRONG_BRIDGE_TYPE_EXCEPTION.getMessage()));
 	}
+
+	public boolean isSame(BridgeMoveType bridgeMoveType) {
+		return this == bridgeMoveType;
+	}
 }
