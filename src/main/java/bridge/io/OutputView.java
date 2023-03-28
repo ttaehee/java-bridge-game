@@ -1,5 +1,8 @@
 package bridge.io;
 
+import static bridge.io.GameMessage.FINAL_RESULT;
+import static bridge.io.GameMessage.WIN_RESULT;
+import static bridge.io.GameMessage.TOTAL_ROUND;
 import static bridge.io.GameUnitMessage.CORRECT_EXPRESSION;
 import static bridge.io.GameUnitMessage.ENTER;
 import static bridge.io.GameUnitMessage.LEFT_BRACKET;
@@ -27,7 +30,7 @@ public class OutputView {
 	 * 게임 진행과 관련된 메시지를 출력한다
 	 */
 	public void printMessage(GameMessage gameMessage) {
-		System.out.println(gameMessage);
+		System.out.println(gameMessage.getMessage());
 	}
 
 	/**
@@ -44,6 +47,16 @@ public class OutputView {
 				MessageFormat.format("{0}{1}{2}{3}{4}",
 						bridgeUpHistory, ENTER.getUnit(), bridgeDownHistory, ENTER.getUnit(), ENTER.getUnit())
 		);
+	}
+
+	/**
+	 * 게임의 최종 결과를 정해진 형식에 맞춰 출력한다.
+	 */
+	public void printResult(BridgeGameHistory bridgeGameHistory) {
+		System.out.print(FINAL_RESULT.getMessage());
+		printMap(bridgeGameHistory);
+		System.out.print(MessageFormat.format(WIN_RESULT.getMessage(), bridgeGameHistory.getGameResult().getStatus()));
+		System.out.print(MessageFormat.format(TOTAL_ROUND.getMessage(), bridgeGameHistory.getGameRound()));
 	}
 
 	private String createHistory(

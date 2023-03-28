@@ -1,10 +1,20 @@
 package bridge.model;
 
 public enum BridgeGameStatus {
-	START,
-	CONTINUE,
-	SUCCESS,
-	FAIL;
+	START("시작"),
+	CONTINUE("진행 중"),
+	SUCCESS("성공"),
+	FAIL("실패");
+
+	private final String status;
+
+	BridgeGameStatus(String status) {
+		this.status = status;
+	}
+
+	public String getStatus() {
+		return status;
+	}
 
 	public boolean isContinue() {
 		return this == CONTINUE;
