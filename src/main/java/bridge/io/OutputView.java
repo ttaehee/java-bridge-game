@@ -1,6 +1,7 @@
 package bridge.io;
 
 import static bridge.io.GameMessage.FINAL_RESULT;
+import static bridge.io.GameMessage.START;
 import static bridge.io.GameMessage.WIN_RESULT;
 import static bridge.io.GameMessage.TOTAL_ROUND;
 import static bridge.io.GameUnitMessage.CORRECT_EXPRESSION;
@@ -27,10 +28,10 @@ import bridge.model.BridgeMoveType;
 public class OutputView {
 
 	/**
-	 * 게임 진행과 관련된 메시지를 출력한다
+	 * 게임 시작 메시지를 출력한다
 	 */
-	public void printMessage(GameMessage gameMessage) {
-		System.out.println(gameMessage.getMessage());
+	public void printStartMessage() {
+		System.out.print(START.getMessage());
 	}
 
 	/**
