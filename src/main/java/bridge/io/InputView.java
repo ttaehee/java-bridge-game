@@ -23,7 +23,7 @@ public class InputView {
 		validateDigit(input);
 		int bridgeSize = Integer.parseInt(input);
 		checkSizeRange(bridgeSize);
-		return scanner.nextInt();
+		return bridgeSize;
 	}
 
 	/**
