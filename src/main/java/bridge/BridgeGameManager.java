@@ -2,6 +2,7 @@ package bridge;
 
 import bridge.io.InputView;
 import bridge.io.OutputView;
+import bridge.model.BridgeGameStatus;
 import bridge.model.BridgeMoveType;
 
 public class BridgeGameManager {
@@ -19,6 +20,16 @@ public class BridgeGameManager {
 			try {
 				outputView.printStartMessage();
 				return inputView.readBridgeSize();
+			} catch (IllegalArgumentException e) {
+				outputView.printException(e.getMessage());
+			}
+		}
+	}
+
+	private BridgeGameStatus handlePlayerMove() {
+		while (true) {
+			try {
+				return bridgeGame.moveAndCheckAnswer(getMoveType());
 			} catch (IllegalArgumentException e) {
 				outputView.printException(e.getMessage());
 			}
