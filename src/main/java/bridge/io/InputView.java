@@ -8,16 +8,10 @@ import java.util.Scanner;
 import bridge.model.BridgeGameEndType;
 import bridge.model.BridgeMoveType;
 
-/**
- * 사용자로부터 입력을 받는 역할을 한다.
- */
 public class InputView {
 
 	private final Scanner scanner = new Scanner(System.in);
 
-	/**
-	 * 다리의 길이를 입력받는다.
-	 */
 	public int readBridgeSize() {
 		String input = scanner.nextLine();
 		validateDigit(input);
@@ -26,17 +20,11 @@ public class InputView {
 		return bridgeSize;
 	}
 
-	/**
-	 * 사용자가 이동할 칸을 입력받는다.
-	 */
 	public BridgeMoveType readMoving() {
 		String direction = scanner.nextLine();
 		return BridgeMoveType.of(direction);
 	}
 
-	/**
-	 * 사용자가 게임을 다시 시도할지 종료할지 여부를 입력받는다.
-	 */
 	public BridgeGameEndType readGameEndCommand() {
 		String readGameEndType = scanner.nextLine();
 		return BridgeGameEndType.of(readGameEndType);

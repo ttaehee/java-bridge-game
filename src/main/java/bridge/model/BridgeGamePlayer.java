@@ -11,9 +11,6 @@ public class BridgeGamePlayer {
 		this.playerRoute = new ArrayList<>();
 	}
 
-	/**
-	 * 플레이어가 칸을 이동할 때 사용하는 메서드
-	 */
 	public void move(BridgeMoveType bridgeMoveType) {
 		playerRoute.add(bridgeMoveType);
 	}
@@ -26,23 +23,14 @@ public class BridgeGamePlayer {
 		return playerRoute.get(currentLocation) != bridgeGameAnswer.get(currentLocation);
 	}
 
-	/**
-	 * 플레이어가 다리를 끝까지 건넜는지 여부를 반환하는 메서드
-	 */
 	public boolean isReached(List<BridgeMoveType> bridgeGameAnswer) {
 		return playerRoute.size() == bridgeGameAnswer.size();
 	}
 
-	/**
-	 * 플레이어의 현재 이동 기록을 조회하는 메서드
-	 */
 	public List<BridgeMoveType> getMoveHistory() {
 		return new ArrayList<>(playerRoute);
 	}
 
-	/**
-	 * 플레이어의 현재 이동 기록을 리셋하는 메서드
-	 */
 	public void resetMoveHistory() {
 		playerRoute.clear();
 	}

@@ -7,9 +7,6 @@ import bridge.model.BridgeGamePlayer;
 import bridge.model.BridgeGameStatus;
 import bridge.model.BridgeMoveType;
 
-/**
- * 다리 건너기 게임을 관리하는 클래스
- */
 public class BridgeGame {
 
 	private final BridgeGameRound bridgeRound = new BridgeGameRound();
