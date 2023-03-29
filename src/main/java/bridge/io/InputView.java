@@ -37,7 +37,7 @@ public class InputView {
 	/**
 	 * 사용자가 게임을 다시 시도할지 종료할지 여부를 입력받는다.
 	 */
-	public BridgeGameEndType readGameCommand() {
+	public BridgeGameEndType readGameEndCommand() {
 		String readGameEndType = scanner.nextLine();
 		return BridgeGameEndType.of(readGameEndType);
 	}

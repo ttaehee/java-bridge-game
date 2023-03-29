@@ -2,6 +2,7 @@ package bridge.io;
 
 import static bridge.io.GameMessage.FINAL_RESULT;
 import static bridge.io.GameMessage.REQUEST_DIRECTION;
+import static bridge.io.GameMessage.RESTART_OR_EXIT;
 import static bridge.io.GameMessage.START;
 import static bridge.io.GameMessage.WIN_RESULT;
 import static bridge.io.GameMessage.TOTAL_ROUND;
@@ -37,6 +38,10 @@ public class OutputView {
 
 	public void printMoveMessage() {
 		System.out.print(REQUEST_DIRECTION.getMessage());
+	}
+
+	public void printGameEndCommandMessage() {
+		System.out.print(RESTART_OR_EXIT.getMessage());
 	}
 
 	/**
