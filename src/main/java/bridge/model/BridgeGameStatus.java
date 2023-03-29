@@ -16,10 +16,6 @@ public enum BridgeGameStatus {
 		return status;
 	}
 
-	public boolean isContinue() {
-		return this == CONTINUE;
-	}
-
 	public boolean isSuccess() {
 		return this == SUCCESS;
 	}
@@ -30,9 +26,5 @@ public enum BridgeGameStatus {
 
 	public boolean isGaming() {
 		return this == START || this == CONTINUE;
-	}
-
-	public boolean isEnd() {
-		return this == SUCCESS || this == FAIL;
 	}
 }
