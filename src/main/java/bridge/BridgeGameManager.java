@@ -1,5 +1,9 @@
 package bridge;
 
+import static bridge.model.BridgeGameStatus.FAIL;
+import static bridge.model.BridgeGameStatus.START;
+import static bridge.model.BridgeGameStatus.SUCCESS;
+
 import bridge.io.InputView;
 import bridge.io.OutputView;
 import bridge.model.BridgeGameEndType;
@@ -46,6 +50,29 @@ public class BridgeGameManager {
 				outputView.printException(e.getMessage());
 			}
 		}
+	}
+
+	private BridgeGameStatus checkGameStatus(BridgeGameStatus bridgeGameStatus) {
+		if (bridgeGameStatus.isSuccess()) {
+			return SUCCESS;
+		}
+
+		if (bridgeGameStatus.isFail()) {
+			return checkGameEndType();
+		}
+
+		return bridgeGameStatus;
+	}
+
+	private BridgeGameStatus checkGameEndType() {
+		BridgeGameEndType bridgeGameEndType = getGameEndCommand();
+
+		if (bridgeGameEndType.isEnd()) {
+			return FAIL;
+		}
+
+		bridgeGame.retry();
+		return START;
 	}
 
 	private BridgeGameEndType getGameEndCommand() {
